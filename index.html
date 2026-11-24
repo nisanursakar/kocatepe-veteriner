@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kocatepe Veteriner Kliniği | Bayrampaşa, İstanbul</title>
+<meta name="description" content="Bayrampaşa Kocatepe'de akşam 23.00'e kadar açık veteriner kliniği. Kedi, köpek ve kuş muayenesi, aşılama, cerrahi, laboratuvar ve pet kuaför. WhatsApp'tan randevu alın.">
+<meta name="theme-color" content="#1B4332">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        cream: '#FAF9F6',
+        forest: { DEFAULT: '#1B4332', 700: '#235a43', 50: '#eef4f0', 100: '#dbe8e0' },
+        ink: '#1C1917',
+        coral: { DEFAULT: '#D96B43', 600: '#c45a33' }
+      },
+      fontFamily: {
+        display: ['Fraunces', 'Georgia', 'serif'],
+        jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif']
+      },
+      boxShadow: {
+        soft: '0 1px 2px rgba(28,25,23,.04), 0 8px 24px -12px rgba(28,25,23,.12)'
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  body { background: #FAF9F6; color: #1C1917; font-family: Inter, system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  .tab-btn[aria-selected="true"] { background: #1B4332; color: #FAF9F6; border-color: #1B4332; }
+  .tab-panel { animation: fadeUp .35s ease both; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  .alert-item input:checked + span { color: #1C1917; }
+  .alert-item:has(input:checked) { background: #fdf1ec; border-color: #D96B43; }
+  .photo-fallback { background: linear-gradient(135deg, #eef4f0, #f3e6dc); }
+  @media (prefers-reduced-motion: reduce) { .tab-panel { animation: none; } html { scroll-behavior: auto; } }
+</style>
+</head>
+<body class="pb-20 md:pb-0">
+
+<header class="sticky top-0 z-40 border-b border-stone-200 bg-cream/90 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5">
+    <a href="#top" class="flex items-center gap-2.5" aria-label="Kocatepe Veteriner Kliniği ana sayfa">
+      <span class="flex h-9 w-9 items-center justify-center rounded-full bg-forest text-cream"><i data-lucide="paw-print" class="h-[18px] w-[18px]"></i></span>
+      <span class="leading-tight">
+        <span class="block font-display text-[17px] font-semibold text-forest">Kocatepe</span>
+        <span class="block text-[11px] uppercase tracking-[0.14em] text-stone-500">Veteriner Kliniği</span>
+      </span>
+    </a>
+    <nav class="hidden items-center gap-7 text-sm font-medium text-stone-700 lg:flex" aria-label="Ana menü">
+      <a href="#hekimler" class="hover:text-forest">Hekimlerimiz</a>
+      <a href="#hazirlik" class="hover:text-forest">Hazırlık Rehberi</a>
+      <a href="#acil" class="hover:text-forest">Acil Durum</a>
+      <a href="#sahiplendirme" class="hover:text-forest">Sahiplendirme</a>
+      <a href="#konum" class="hover:text-forest">Konum</a>
+    </nav>
+    <div class="flex items-center gap-2">
+      <a href="https://wa.me/905336216223?text=Merhaba%2C%20randevu%20almak%20istiyorum." target="_blank" rel="noopener" class="hidden items-center gap-2 rounded-full bg-coral px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-coral-600 sm:inline-flex">
+        <i data-lucide="message-circle" class="h-4 w-4"></i> WhatsApp Randevu
+      </a>
+      <button id="menuBtn" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 lg:hidden" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileMenu">
+        <i data-lucide="menu" class="h-5 w-5"></i>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden border-t border-stone-200 bg-cream lg:hidden">
+    <nav class="mx-auto flex max-w-6xl flex-col px-5 py-2 text-[15px] font-medium" aria-label="Mobil menü">
+      <a href="#hekimler" class="border-b border-stone-200 py-3">Hekimlerimiz</a>
+      <a href="#hazirlik" class="border-b border-stone-200 py-3">Hazırlık Rehberi</a>
+      <a href="#acil" class="border-b border-stone-200 py-3">Acil Durum</a>
+      <a href="#sahiplendirme" class="border-b border-stone-200 py-3">Sahiplendirme</a>
+      <a href="#konum" class="py-3">Konum</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="mx-auto grid max-w-6xl items-center gap-10 px-5 pb-16 pt-10 md:pb-24 md:pt-16 lg:grid-cols-12 lg:gap-14">
+  <div class="lg:col-span-6">
+    <div class="inline-flex items-center gap-2.5 rounded-full border border-stone-200 bg-white px-3.5 py-1.5 text-[13px] font-medium text-stone-700 shadow-soft">
+      <span class="relative flex h-2.5 w-2.5">
+        <span id="statusPing" class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60"></span>
+        <span id="statusDot" class="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-600"></span>
+      </span>
+      <span>Akşam 23.00'e kadar açığız</span>
+      <span class="text-stone-300">|</span>
+      <span id="statusText" class="text-stone-500">Durum kontrol ediliyor</span>
+    </div>
+    <h1 class="mt-6 font-display text-[40px] font-semibold leading-[1.08] tracking-tight text-forest sm:text-5xl lg:text-[56px]">
+      İş çıkışı da gelebilirsiniz.<br>
+      <span class="text-ink">Biz geç saate kadar buradayız.</span>
+    </h1>
+    <p class="mt-6 max-w-xl text-[17px] leading-relaxed text-stone-600">
+      Bayrampaşa Kocatepe'de, kedinizin, köpeğinizin ya da muhabbet kuşunuzun muayenesi için gün boyu bir şeyi beklemenize gerek yok. Pazartesi'den Cumartesi'ye 23.00'e kadar kapımız açık. Gelmeden önce WhatsApp'tan bir mesaj bırakırsanız sizi bekleriz.
+    </p>
+    <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+      <a href="https://wa.me/905336216223?text=Merhaba%2C%20randevu%20almak%20istiyorum." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 rounded-full bg-coral px-6 py-3.5 text-[15px] font-semibold text-white transition hover:bg-coral-600">
+        <i data-lucide="message-circle" class="h-[18px] w-[18px]"></i> WhatsApp'tan Randevu Al
+      </a>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Kocatepe%20Veteriner%20Klini%C4%9Fi%2C%20Kocatepe%20Mah.%2050.%20Y%C4%B1l%20Cd.%20No%3A39%2C%20Bayramapa%C5%9Fa%20%C4%B0stanbul" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 rounded-full border border-stone-300 bg-white px-6 py-3.5 text-[15px] font-semibold text-forest transition hover:border-forest">
+        <i data-lucide="map-pin" class="h-[18px] w-[18px]"></i> Yol Tarifi Al
+      </a>
+    </div>
+    <p class="mt-5 flex items-center gap-2 text-sm text-stone-500">
+      <i data-lucide="phone" class="h-4 w-4"></i> Ya da doğrudan arayın: <a href="tel:+905336216223" class="font-semibold text-ink underline decoration-stone-300 underline-offset-4 hover:decoration-coral">0533 621 62 23</a>
+    </p>
+  </div>
+  <div class="relative lg:col-span-6">
+    <div class="relative ml-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2rem] border border-stone-200 shadow-soft photo-fallback sm:aspect-[5/5] lg:max-w-none lg:aspect-[4/5]">
+      <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1000&q=80" alt="Sıcak ışıkta oturan mutlu bir golden retriever" class="h-full w-full object-cover" loading="eager" onerror="this.style.display='none'">
+    </div>
+    <div class="absolute -bottom-5 left-2 hidden max-w-[230px] rounded-2xl border border-stone-200 bg-white p-4 shadow-soft sm:block md:-left-6">
+      <p class="font-display text-[15px] font-semibold text-forest">Kuşlar da bizim hastamız</p>
+      <p class="mt-1 text-[13px] leading-snug text-stone-600">Muhabbet kuşu ve kafes kuşları için de muayene yapıyoruz.</p>
+    </div>
+  </div>
+</section>
+
+<section id="hekimler" class="border-y border-stone-200 bg-white">
+  <div class="mx-auto max-w-6xl px-5 py-16 md:py-24">
+    <div class="grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-7">
+        <p class="text-[12px] font-semibold uppercase tracking-[0.18em] text-coral">Hekimlerimiz</p>
+        <h2 class="mt-3 font-display text-3xl font-semibold leading-tight text-forest md:text-[40px]">Kapıdan girdiğinizde karşınızda iki hekim var.</h2>
+        <p class="mt-4 max-w-xl text-[16px] leading-relaxed text-stone-600">Hasta sahibine ne yaptığımızı, neden yaptığımızı ve sonrasında evde neye dikkat etmesi gerektiğini açıkça anlatırız. Anlamadığınız bir şey kalırsa tekrar sorun, memnuniyetle anlatırız.</p>
+
+        <div class="mt-10 space-y-5">
+          <article class="flex gap-5 rounded-2xl border border-stone-200 bg-cream p-5 md:p-6">
+            <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-forest font-display text-xl font-semibold text-cream">AÖ</div>
+            <div>
+              <h3 class="font-jakarta text-lg font-semibold text-ink">Veteriner Hekim Ali Öcal</h3>
+              <p class="mt-1 text-[15px] leading-relaxed text-stone-600">Kocatepe Veteriner Kliniği'nin hekimlerinden. Muayene, aşı takibi ve tedavi süreçlerinde sizinle birebir ilgilenir.</p>
+              <a href="https://wa.me/905336216223?text=Merhaba%2C%20Ali%20Öcal%20Hoca%27dan%20randevu%20almak%20istiyorum." target="_blank" rel="noopener" class="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-coral hover:text-coral-600">Ona yazın <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a>
+            </div>
+          </article>
+          <article class="flex gap-5 rounded-2xl border border-stone-200 bg-cream p-5 md:ml-8 md:p-6">
+            <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-coral font-display text-xl font-semibold text-white">HG</div>
+            <div>
+              <h3 class="font-jakarta text-lg font-semibold text-ink">Veteriner Hekim Hüseyin Gökhaner</h3>
+              <p class="mt-1 text-[15px] leading-relaxed text-stone-600">Kocatepe Veteriner Kliniği'nin hekimlerinden. Dostlarınızın muayene ve tedavi sürecini sakin ve net bir dille anlatır.</p>
+              <a href="https://wa.me/905336216223?text=Merhaba%2C%20Hüseyin%20Gökhaner%20Hoca%27dan%20randevu%20almak%20istiyorum." target="_blank" rel="noopener" class="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-coral hover:text-coral-600">Ona yazın <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <aside class="lg:col-span-5">
+        <div class="rounded-3xl border border-stone-200 bg-forest p-7 text-cream shadow-soft md:p-9">
+          <div class="flex items-center gap-2.5 text-[12px] font-semibold uppercase tracking-[0.18em] text-emerald-200">
+            <i data-lucide="clock" class="h-4 w-4"></i> Çalışma Saatleri
+          </div>
+          <dl class="mt-6 divide-y divide-white/15" id="hoursList">
+            <div class="flex items-baseline justify-between py-4" data-days="1,2,3,4,5,6">
+              <dt class="text-[15px] text-emerald-50/90">Pazartesi - Cumartesi</dt>
+              <dd class="font-display text-2xl font-semibold">10.00 - 23.00</dd>
+            </div>
+            <div class="flex items-baseline justify-between py-4" data-days="0">
+              <dt class="text-[15px] text-emerald-50/90">Pazar</dt>
+              <dd class="font-display text-2xl font-semibold">12.00 - 20.00</dd>
+            </div>
+          </dl>
+          <p class="mt-2 rounded-xl bg-white/10 px-4 py-3 text-[14px] leading-relaxed text-emerald-50">Hafta içi ve cumartesi akşam 23.00'e kadar açığız. Mesai sonrası gelebilen hasta sahipleri için.</p>
+          <div class="mt-7 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+            <a href="tel:+905336216223" class="inline-flex items-center justify-center gap-2 rounded-full bg-cream px-5 py-3 text-sm font-semibold text-forest hover:bg-white"><i data-lucide="phone" class="h-4 w-4"></i> 0533 621 62 23</a>
+            <a href="https://instagram.com/kocatepe_veteriner_klinigi" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/30 px-5 py-3 text-sm font-semibold text-cream hover:bg-white/10"><i data-lucide="instagram" class="h-4 w-4"></i> @kocatepe_veteriner_klinigi</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="hazirlik" class="mx-auto max-w-6xl px-5 py-16 md:py-24">
+  <div class="grid gap-10 lg:grid-cols-12">
+    <div class="lg:col-span-4">
+      <p class="text-[12px] font-semibold uppercase tracking-[0.18em] text-coral">Hazırlık Rehberi</p>
+      <h2 class="mt-3 font-display text-3xl font-semibold leading-tight text-forest md:text-[40px]">Kliniğe gelmeden önce neler yapmalı?</h2>
+      <p class="mt-4 text-[16px] leading-relaxed text-stone-600">Küçük bir hazırlık, hem dostunuzun hem sizin için muayeneyi çok daha rahat hale getirir. Türünüzü seçin.</p>
+      <div class="mt-7 flex flex-wrap gap-2" role="tablist" aria-label="Hayvan türü">
+        <button role="tab" id="tab-kedi" aria-selected="true" aria-controls="panel" data-key="kedi" class="tab-btn inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-4 py-2.5 text-sm font-semibold text-stone-700 transition hover:border-forest"><i data-lucide="cat" class="h-4 w-4"></i> Kedi</button>
+        <button role="tab" id="tab-kopek" aria-selected="false" aria-controls="panel" data-key="kopek" class="tab-btn inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-4 py-2.5 text-sm font-semibold text-stone-700 transition hover:border-forest"><i data-lucide="dog" class="h-4 w-4"></i> Köpek</button>
+        <button role="tab" id="tab-kus" aria-selected="false" aria-controls="panel" data-key="kus" class="tab-btn inline-flex items-center gap-2 rounded-full border border-stone-300 bg-white px-4 py-2.5 text-sm font-semibold text-stone-700 transition hover:border-forest"><i data-lucide="bird" class="h-4 w-4"></i> Muhabbet Kuşu &amp; Kafes Kuşları</button>
+      </div>
+    </div>
+    <div class="lg:col-span-8">
+      <div id="panel" role="tabpanel" class="tab-panel rounded-3xl border border-stone-200 bg-white p-6 shadow-soft md:p-9" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section id="acil" class="border-y border-stone-200 bg-[#f4ede4]">
+  <div class="mx-auto max-w-6xl px-5 py-16 md:py-24">
+    <div class="grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <p class="text-[12px] font-semibold uppercase tracking-[0.18em] text-coral">Acil Durum</p>
+        <h2 class="mt-3 font-display text-3xl font-semibold leading-tight text-forest md:text-[40px]">Ne zaman vakit kaybetmeden gelmelisiniz?</h2>
+        <p class="mt-4 text-[16px] leading-relaxed text-stone-700">Aşağıdakilerden biri varsa randevu beklemeyin. Önce arayın, sonra yola çıkın ki biz de hazırlıklı olalım. Gördüğünüz belirtiyi işaretleyin.</p>
+        <div id="alertBox" class="mt-7 rounded-2xl border border-stone-300 bg-white p-5">
+          <p id="alertMsg" class="text-[15px] leading-relaxed text-stone-600">Henüz bir belirti seçmediniz.</p>
+          <div class="mt-4 flex flex-col gap-3 sm:flex-row">
+            <a id="alertWa" href="https://wa.me/905336216223?text=ACİL%3A%20Hayvanım%20için%20acil%20yardıma%20ihtiyacım%20var." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 rounded-full bg-coral px-5 py-3 text-sm font-semibold text-white hover:bg-coral-600"><i data-lucide="siren" class="h-4 w-4"></i> Acil Durum Bildir (WhatsApp)</a>
+            <a href="tel:+905336216223" class="inline-flex items-center justify-center gap-2 rounded-full border border-forest px-5 py-3 text-sm font-semibold text-forest hover:bg-forest hover:text-cream"><i data-lucide="phone-call" class="h-4 w-4"></i> 0533 621 62 23</a>
+          </div>
+          <p class="mt-3 text-[12.5px] text-stone-500">Mesai saatleri dışında ulaşamazsanız en yakın 7/24 açık veteriner kliniğine gidin.</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <div class="grid gap-5 md:grid-cols-2">
+          <div class="rounded-2xl border border-stone-300 bg-white p-5 md:p-6">
+            <h3 class="flex items-center gap-2 font-jakarta text-[17px] font-semibold text-forest"><i data-lucide="cat" class="h-5 w-5"></i> Kedilerde</h3>
+            <ul class="mt-4 space-y-2.5" data-alerts="kedi"></ul>
+          </div>
+          <div class="rounded-2xl border border-stone-300 bg-white p-5 md:p-6">
+            <h3 class="flex items-center gap-2 font-jakarta text-[17px] font-semibold text-forest"><i data-lucide="dog" class="h-5 w-5"></i> Köpeklerde</h3>
+            <ul class="mt-4 space-y-2.5" data-alerts="kopek"></ul>
+          </div>
+          <div class="rounded-2xl border border-stone-300 bg-white p-5 md:col-span-2 md:p-6">
+            <h3 class="flex items-center gap-2 font-jakarta text-[17px] font-semibold text-forest"><i data-lucide="bird" class="h-5 w-5"></i> Kuşlarda</h3>
+            <ul class="mt-4 grid gap-2.5 md:grid-cols-2" data-alerts="kus"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sahiplendirme" class="mx-auto max-w-6xl px-5 py-16 md:py-24">
+  <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end">
+    <div class="max-w-2xl">
+      <p class="text-[12px] font-semibold uppercase tracking-[0.18em] text-coral">Sahiplendirme</p>
+      <h2 class="mt-3 font-display text-3xl font-semibold leading-tight text-forest md:text-[40px]">Yuva arayan dostlarımız</h2>
+      <p class="mt-4 text-[16px] leading-relaxed text-stone-600">Kliniğimize ulaşan ve yeni bir yuva bekleyen canlar. Önce tanışırsınız, sonra karar verirsiniz. Aşı ve kısırlaştırma gibi konularda size eşlik ederiz.</p>
+    </div>
+    <p class="text-[13px] text-stone-500">Aşağıdaki ilanlar örnek vitrin kartlarıdır. Güncel durumu WhatsApp'tan sorun.</p>
+  </div>
+
+  <div class="mt-10 grid gap-6 md:grid-cols-12">
+    <article class="overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-soft md:col-span-7 md:grid md:grid-cols-2">
+      <div class="aspect-[4/3] photo-fallback md:aspect-auto">
+        <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?auto=format&fit=crop&w=900&q=80" alt="Tekir bir kedi yavrusu" class="h-full w-full object-cover" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="flex flex-col p-6">
+        <span class="w-fit rounded-full bg-forest-50 px-3 py-1 text-xs font-semibold text-forest">Kedi</span>
+        <h3 class="mt-3 font-display text-2xl font-semibold text-forest">Tekir yavru</h3>
+        <dl class="mt-4 space-y-2 text-[14.5px] text-stone-700">
+          <div class="flex justify-between border-b border-stone-200 pb-2"><dt class="text-stone-500">Yaş</dt><dd class="font-medium">3 aylık</dd></div>
+          <div class="flex justify-between border-b border-stone-200 pb-2"><dt class="text-stone-500">Cinsiyet</dt><dd class="font-medium">Dişi</dd></div>
+          <div class="flex justify-between"><dt class="text-stone-500">Aşı</dt><dd class="font-medium">İlk karma aşısı yapıldı</dd></div>
+        </dl>
+        <p class="mt-4 text-[14.5px] leading-relaxed text-stone-600">Meraklı, oyuncu ve insan seven biri. Çocuklu evlerde rahat uyum sağlar.</p>
+        <a href="https://wa.me/905336216223?text=Merhaba%2C%203%20ayl%C4%B1k%20tekir%20yavruyu%20sahiplenmek%20istiyorum." target="_blank" rel="noopener" class="mt-auto inline-flex items-center justify-center gap-2 rounded-full bg-coral px-5 py-3 text-sm font-semibold text-white hover:bg-coral-600"><i data-lucide="message-circle" class="h-4 w-4"></i> Sahiplenmek İçin WhatsApp'tan Yaz</a>
+      </div>
+    </article>
+
+    <article class="overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-soft md:col-span-5">
+      <div class="aspect-[4/3] photo-fallback">
+        <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&w=900&q=80" alt="Uysal bir köpek" class="h-full w-full object-cover" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="flex flex-col p-6">
+        <span class="w-fit rounded-full bg-forest-50 px-3 py-1 text-xs font-semibold text-forest">Köpek</span>
+        <h3 class="mt-3 font-display text-2xl font-semibold text-forest">Uysal dost</h3>
+        <dl class="mt-4 space-y-2 text-[14.5px] text-stone-700">
+          <div class="flex justify-between border-b border-stone-200 pb-2"><dt class="text-stone-500">Yaş</dt><dd class="font-medium">2 yaşında</dd></div>
+          <div class="flex justify-between border-b border-stone-200 pb-2"><dt class="text-stone-500">Cinsiyet</dt><dd class="font-medium">Erkek</dd></div>
+          <div class="flex justify-between"><dt class="text-stone-500">Aşı</dt><dd class="font-medium">Aşıları tam</dd></div>
+        </dl>
+        <p class="mt-4 text-[14.5px] leading-relaxed text-stone-600">Sakin, tasmayla yürümeye alışık, insanlara çabuk ısınıyor.</p>
+        <a href="https://wa.me/905336216223?text=Merhaba%2C%20kliniktaki%20uysal%20k%C3%B6pe%C4%9Fi%20sahiplenmek%20istiyorum." target="_blank" rel="noopener" class="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-coral px-5 py-3 text-sm font-semibold text-white hover:bg-coral-600"><i data-lucide="message-circle" class="h-4 w-4"></i> Sahiplenmek İçin WhatsApp'tan Yaz</a>
+      </div>
+    </article>
+
+    <article class="overflow-hidden rounded-3xl border border-stone-200 bg-white shadow-soft md:col-span-12 md:grid md:grid-cols-12">
+      <div class="aspect-[16/9] photo-fallback md:col-span-4 md:aspect-auto">
+        <img src="https://images.unsplash.com/photo-1522926193341-e9ffd686c60f?auto=format&fit=crop&w=1000&q=80" alt="Mavi renkli bir muhabbet kuşu" class="h-full w-full object-cover" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="grid gap-6 p-6 md:col-span-8 md:grid-cols-2 md:p-8">
+        <div>
+          <span class="rounded-full bg-forest-50 px-3 py-1 text-xs font-semibold text-forest">Muhabbet Kuşu</span>
+          <h3 class="mt-3 font-display text-2xl font-semibold text-forest">Neşeli bir muhabbet kuşu</h3>
+          <p class="mt-3 text-[14.5px] leading-relaxed text-stone-600">İnsanla vakit geçirmeyi seviyor. Geniş bir kafes ve her gün biraz ilgi bekliyor.</p>
+        </div>
+        <div class="flex flex-col">
+          <dl class="space-y-2 text-[14.5px] text-stone-700">
+            <div class="flex justify-between border-b border-stone-200 pb-2"><dt class="text-stone-500">Yaş</dt><dd class="font-medium">1 yaşında</dd></div>
+            <div class="flex justify-between border-b border-stone-200 pb-2"><dt class="text-stone-500">Cinsiyet</dt><dd class="font-medium">Erkek</dd></div>
+            <div class="flex justify-between"><dt class="text-stone-500">Sağlık</dt><dd class="font-medium">Muayenesi yapıldı</dd></div>
+          </dl>
+          <a href="https://wa.me/905336216223?text=Merhaba%2C%20kliniktaki%20muhabbet%20ku%C5%9Funu%20sahiplenmek%20istiyorum." target="_blank" rel="noopener" class="mt-5 inline-flex items-center justify-center gap-2 rounded-full bg-coral px-5 py-3 text-sm font-semibold text-white hover:bg-coral-600 md:mt-auto"><i data-lucide="message-circle" class="h-4 w-4"></i> Sahiplenmek İçin WhatsApp'tan Yaz</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="border-y border-stone-200 bg-forest-50">
+  <div class="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:py-20 lg:grid-cols-12">
+    <div class="lg:col-span-5">
+      <p class="text-[12px] font-semibold uppercase tracking-[0.18em] text-coral">Askıda Mama</p>
+      <h2 class="mt-3 font-display text-3xl font-semibold leading-tight text-forest md:text-[38px]">Klinikte tedavi gören canlar için bir paket mama yeter.</h2>
+      <p class="mt-4 text-[16px] leading-relaxed text-stone-700">Kliniğimize sokaktan gelen, tedavisi süren hayvanlar var. Onlara destek olmak isterseniz hesap numarası ya da form yok. Kliniğe uğrayıp bırakmanız yeterli.</p>
+    </div>
+    <div class="lg:col-span-7">
+      <div class="rounded-3xl border border-stone-200 bg-white p-6 shadow-soft md:p-8">
+        <h3 class="font-jakarta text-lg font-semibold text-ink">Ne işimize yarar?</h3>
+        <ul class="mt-4 grid gap-3 sm:grid-cols-2">
+          <li class="flex items-start gap-3 text-[15px] text-stone-700"><i data-lucide="package" class="mt-0.5 h-5 w-5 shrink-0 text-forest"></i> Kedi ve köpek kuru mamaları (açılmamış paket tercih edilir)</li>
+          <li class="flex items-start gap-3 text-[15px] text-stone-700"><i data-lucide="soup" class="mt-0.5 h-5 w-5 shrink-0 text-forest"></i> Konserve ve pouch yaş mamalar</li>
+          <li class="flex items-start gap-3 text-[15px] text-stone-700"><i data-lucide="bandage" class="mt-0.5 h-5 w-5 shrink-0 text-forest"></i> Pansuman ve bakım malzemeleri</li>
+          <li class="flex items-start gap-3 text-[15px] text-stone-700"><i data-lucide="bed-double" class="mt-0.5 h-5 w-5 shrink-0 text-forest"></i> Temiz battaniye ve havlular</li>
+        </ul>
+        <div class="mt-6 flex flex-col gap-3 border-t border-stone-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <p class="text-[14.5px] text-stone-600">Çalışma saatleri içinde kliniğe uğramanız yeterli. Önce haber vermek isterseniz yazın.</p>
+          <a href="https://wa.me/905336216223?text=Merhaba%2C%20klini%C4%9Fe%20mama%20b%C4%B1rakmak%20istiyorum." target="_blank" rel="noopener" class="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-forest px-5 py-3 text-sm font-semibold text-cream hover:bg-forest-700"><i data-lucide="message-circle" class="h-4 w-4"></i> Uğramadan Önce Yaz</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer id="konum" class="bg-ink text-stone-300">
+  <div class="mx-auto max-w-6xl px-5 py-16 md:py-20">
+    <div class="grid gap-12 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+        <div class="flex items-center gap-2.5">
+          <span class="flex h-9 w-9 items-center justify-center rounded-full bg-cream text-forest"><i data-lucide="paw-print" class="h-[18px] w-[18px]"></i></span>
+          <span class="font-display text-xl font-semibold text-cream">Kocatepe Veteriner Kliniği</span>
+        </div>
+        <h2 class="mt-8 font-jakarta text-sm font-semibold uppercase tracking-[0.16em] text-stone-400">Hizmetlerimiz</h2>
+        <ul class="mt-4 space-y-2.5 text-[15px]">
+          <li class="flex items-center gap-3"><i data-lucide="syringe" class="h-4 w-4 text-coral"></i> Koruyucu Hekimlik ve Aşılama</li>
+          <li class="flex items-center gap-3"><i data-lucide="bird" class="h-4 w-4 text-coral"></i> Kuş &amp; Egzotik Hayvan Muayenesi</li>
+          <li class="flex items-center gap-3"><i data-lucide="scissors" class="h-4 w-4 text-coral"></i> Cerrahi Müdahale</li>
+          <li class="flex items-center gap-3"><i data-lucide="microscope" class="h-4 w-4 text-coral"></i> Dahiliye ve Laboratuvar</li>
+          <li class="flex items-center gap-3"><i data-lucide="smile" class="h-4 w-4 text-coral"></i> Ağız ve Diş Sağlığı</li>
+          <li class="flex items-center gap-3"><i data-lucide="sparkles" class="h-4 w-4 text-coral"></i> Pet Kuaför</li>
+        </ul>
+
+        <h2 class="mt-10 font-jakarta text-sm font-semibold uppercase tracking-[0.16em] text-stone-400">Bize Ulaşın</h2>
+        <address class="mt-4 space-y-3 text-[15px] not-italic">
+          <p class="flex items-start gap-3"><i data-lucide="map-pin" class="mt-0.5 h-4 w-4 shrink-0 text-coral"></i> Kocatepe Mah. 50. Yıl Cd. No:39 D:A, 34045 Bayrampaşa/İstanbul</p>
+          <p class="flex items-center gap-3"><i data-lucide="phone" class="h-4 w-4 shrink-0 text-coral"></i> <a href="tel:+905336216223" class="hover:text-white">0533 621 62 23</a></p>
+          <p class="flex items-center gap-3"><i data-lucide="instagram" class="h-4 w-4 shrink-0 text-coral"></i> <a href="https://instagram.com/kocatepe_veteriner_klinigi" target="_blank" rel="noopener" class="hover:text-white">@kocatepe_veteriner_klinigi</a></p>
+          <p class="flex items-start gap-3"><i data-lucide="clock" class="mt-0.5 h-4 w-4 shrink-0 text-coral"></i> <span>Pazartesi - Cumartesi: 10.00 - 23.00<br>Pazar: 12.00 - 20.00</span></p>
+        </address>
+      </div>
+      <div class="lg:col-span-7">
+        <div class="overflow-hidden rounded-3xl border border-white/10">
+          <iframe title="Kocatepe Veteriner Kliniği, Bayrampaşa Kocatepe Mahallesi harita konumu" src="https://www.google.com/maps?q=Kocatepe%20Veteriner%20Klini%C4%9Fi%2C%20Kocatepe%20Mah.%2050.%20Y%C4%B1l%20Cd.%20No%3A39%2C%20Bayramapa%C5%9Fa%20%C4%B0stanbul&output=embed" class="h-[340px] w-full md:h-[440px]" style="border:0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Kocatepe%20Veteriner%20Klini%C4%9Fi%2C%20Kocatepe%20Mah.%2050.%20Y%C4%B1l%20Cd.%20No%3A39%2C%20Bayramapa%C5%9Fa%20%C4%B0stanbul" target="_blank" rel="noopener" class="mt-4 inline-flex items-center gap-2 rounded-full bg-cream px-5 py-3 text-sm font-semibold text-forest hover:bg-white"><i data-lucide="navigation" class="h-4 w-4"></i> Yol Tarifi Al</a>
+      </div>
+    </div>
+    <div class="mt-14 flex flex-col justify-between gap-2 border-t border-white/10 pt-6 text-[13px] text-stone-500 sm:flex-row">
+      <p>&copy; <span id="year"></span> Kocatepe Veteriner Kliniği. Tüm hakları saklıdır.</p>
+      <p>Bayrampaşa, İstanbul</p>
+    </div>
+  </div>
+</footer>
+
+<div class="fixed inset-x-0 bottom-0 z-50 border-t border-stone-200 bg-cream/95 px-3 py-2.5 backdrop-blur md:hidden">
+  <div class="grid grid-cols-2 gap-2.5">
+    <a href="tel:+905336216223" class="inline-flex items-center justify-center gap-2 rounded-full border border-forest py-3 text-[15px] font-semibold text-forest"><i data-lucide="phone" class="h-[18px] w-[18px]"></i> Hemen Ara</a>
+    <a href="https://wa.me/905336216223?text=Merhaba%2C%20randevu%20almak%20istiyorum." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 rounded-full bg-coral py-3 text-[15px] font-semibold text-white"><i data-lucide="message-circle" class="h-[18px] w-[18px]"></i> WhatsApp Randevu</a>
+  </div>
+</div>
+
+<script>
+(function () {
+  var guide = {
+    kedi: {
+      title: 'Kedinizi kliniğe getirirken',
+      intro: 'Kediler için en büyük stres kaynağı yabancı ortam ve kontrolsüz hareket. Hazırlığı eve göre yapın.',
+      groups: [
+        { icon: 'package', name: 'Taşıma kutusu', items: [
+          'Kediyi kucakta ya da koltuk altında getirmeyin. Üstü açılabilen sağlam bir taşıma kutusu kullanın.',
+          'Kutuyu eve birkaç gün önceden çıkarın, içine battaniye koyun ki kedi onu tanıdık bir yer olarak görsün.',
+          'İçine kendi kokusunu taşıyan bir havlu ya da tişört koyun.',
+          'Arabada kutuyu koltuğa yatırıp kemerle sabitleyin, kayıp devrilmesin.'
+        ]},
+        { icon: 'utensils', name: 'Muayene öncesi beslenme', items: [
+          'Hekimimiz aksini söylemediyse normal öğününü verebilirsiniz.',
+          'Anestezi, ameliyat ya da kan tahlili planlıysa mama ve su konusunda önceden bize yazın, süreyi birlikte belirleyelim.',
+          'Kullandığı mamanın markasını ve varsa ilaçlarını not edin ya da fotoğrafını çekin.'
+        ]},
+        { icon: 'heart', name: 'Stresi azaltma', items: [
+          'Kutunun üstünü hafif bir havluyla örtün, görsel uyaran azalınca birçok kedi sakinleşir.',
+          'Bekleme salonunda kutuyu yere değil, sandalyeye ya da dizinize koyun.',
+          'Önceki aşı kartı, tahlil sonuçları ve varsa kusma ya da ishal fotoğraflarını yanınızda getirin.'
+        ]}
+      ]
+    },
+    kopek: {
+      title: 'Köpeğinizi kliniğe getirirken',
+      intro: 'Köpekler için hazırlık, tasma güvenliği ve sakin bir yolculukla başlıyor.',
+      groups: [
+        { icon: 'package', name: 'Tasma ve taşıma', items: [
+          'Kısa, sağlam bir tasma kullanın. Uzun makaralı tasma bekleme salonunda güvenli değildir.',
+          'Küçük ırklar için taşıma çantası ya da kutusu, diğer hayvanlarla karşılaşma riskini azaltır.',
+          'Arabada köpeği serbest bırakmayın. Emniyet kemeri aparatı ya da kafes kullanın.',
+          'Ağzı korkutucu ya da huysuz bir köpek için önceden haber verin, ona göre hazırlanalım.'
+        ]},
+        { icon: 'utensils', name: 'Muayene öncesi beslenme', items: [
+          'Yola çıkmadan kısa bir tuvalet gezintisi yaptırın.',
+          'Arabada bulantısı olan köpeklerde ağır bir öğünü yola çıkmadan hemen önce vermeyin.',
+          'Ameliyat ya da anestezi planı varsa açlık süresi için bize önceden danışın.',
+          'Ödül maması getirin, muayene sırasında işinize yarar.'
+        ]},
+        { icon: 'heart', name: 'Stresi azaltma', items: [
+          'Siz sakin olursanız o da sakin olur. Tasmayı gergin tutmamaya çalışın.',
+          'Bekleme salonunda diğer köpeklerle burun buruna gelmesine izin vermeyin.',
+          'Aşı karnesi, kullandığı ilaçlar ve belirtilerin ne zaman başladığına dair notlarınızı getirin.'
+        ]}
+      ]
+    },
+    kus: {
+      title: 'Muhabbet kuşu ve kafes kuşları için',
+      intro: 'Kuşlar stresi çok hızlı yaşar ve hastalığı gizler. Yolculuk boyunca sakin, sıcak ve karanlık bir ortam hazırlayın.',
+      groups: [
+        { icon: 'package', name: 'Kafes hazırlığı', items: [
+          'Kuşu mümkünse kendi kafesiyle ya da küçük bir taşıma kafesiyle getirin.',
+          'Kafesin üstünü ince bir örtüyle kapatın. Hava almasına izin verin ama görüş alanını daraltın.',
+          'Yemlikleri ve suluğu sabitleyin ya da çıkarın, yolda dökülmesin. Tünekler yerinde ve sağlam olsun.',
+          'Kafes tabanına temiz bir kağıt peçete serin. Dışkıyı muayene için bize göstermek isteyebiliriz.',
+          'Kafesi arabada yere yakın, sabit bir yere koyun. Dışarıda rüzgar ve soğuk yoksa ısıtmaya gerek yok ama kuşu üşütmeyin.'
+        ]},
+        { icon: 'utensils', name: 'Muayene öncesi beslenme', items: [
+          'Kuşları aç bırakmayın. Küçük kuşlar kısa sürede enerji kaybeder.',
+          'Normal yemini ve suyunu verin, yola çıkmadan önce yem kabını kaldırabilirsiniz.',
+          'Kullandığı yem karışımının ve varsa vitamin ya da ilaçların fotoğrafını çekin.'
+        ]},
+        { icon: 'heart', name: 'Stresi azaltma', items: [
+          'Kafese vurmayın, hızlı hareketlerle yaklaşmayın, yolda sessiz olun.',
+          'Bekleme salonunda kafesin üstünü kapalı tutun, özellikle yanında kedi ya da köpek varsa.',
+          'Ne zamandır hasta göründüğünü, dışkı ve yem değişikliklerini not edin. Mümkünse kısa bir video çekin.'
+        ]}
+      ]
+    }
+  };
+
+  var alerts = {
+    kedi: [
+      'Ağzı açık nefes alıyor ya da solunumu hızlı ve zorlu',
+      'Erkek kedi tuvalete gidip idrar yapamıyor, ıkınıyor',
+      'Zambak ya da ilaç gibi zehirli bir şey yedi sanılıyor',
+      'Yüksekten düştü ya da araba çarptı'
+    ],
+    kopek: [
+      'Karnı şişti, kusmaya çalışıyor ama kusamıyor',
+      'Çikolata, ilaç veya zehir yedi sanılıyor',
+      'Nefes almakta zorlanıyor, dili ya da diş etleri mor',
+      'Travma, kanama ya da kasılma geçirdi'
+    ],
+    kus: [
+      'Kafes tabanında kabarmış halde duruyor',
+      'Gagası açık nefes alıyor, kuyruğu her soluk alışta sallanıyor',
+      'Yem yemiyor, tünekten düşüyor ya da dengesini kaybediyor',
+      'Teflon, duman ya da zehirli bir şeye maruz kaldı sanılıyor',
+      'Kanama ya da ciddi bir travma geçirdi',
+      'Gün boyu hareketsiz ve tepkisiz'
+    ]
+  };
+
+  var panel = document.getElementById('panel');
+  var tabs = document.querySelectorAll('.tab-btn');
+
+  function renderGuide(key) {
+    var g = guide[key];
+    var html = '<h3 class="font-display text-2xl font-semibold text-forest">' + g.title + '</h3>' +
+      '<p class="mt-2 text-[15.5px] leading-relaxed text-stone-600">' + g.intro + '</p>' +
+      '<div class="mt-7 space-y-8">';
+    g.groups.forEach(function (grp) {
+      html += '<div><h4 class="flex items-center gap-2.5 font-jakarta text-[15px] font-semibold text-ink">' +
+        '<span class="flex h-8 w-8 items-center justify-center rounded-full bg-forest-50 text-forest"><i data-lucide="' + grp.icon + '" class="h-4 w-4"></i></span>' + grp.name + '</h4>' +
+        '<ul class="mt-3 space-y-2.5 border-l border-stone-200 pl-5">';
+      grp.items.forEach(function (it) {
+        html += '<li class="flex items-start gap-2.5 text-[15px] leading-relaxed text-stone-700"><i data-lucide="check" class="mt-1 h-4 w-4 shrink-0 text-coral"></i><span>' + it + '</span></li>';
+      });
+      html += '</ul></div>';
+    });
+    html += '</div>';
+    panel.innerHTML = html;
+    panel.setAttribute('aria-labelledby', 'tab-' + key);
+    panel.classList.remove('tab-panel');
+    void panel.offsetWidth;
+    panel.classList.add('tab-panel');
+    lucide.createIcons();
+  }
+
+  tabs.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      tabs.forEach(function (b) { b.setAttribute('aria-selected', 'false'); });
+      btn.setAttribute('aria-selected', 'true');
+      renderGuide(btn.getAttribute('data-key'));
+    });
+  });
+
+  var alertLists = document.querySelectorAll('[data-alerts]');
+  alertLists.forEach(function (ul) {
+    var key = ul.getAttribute('data-alerts');
+    alerts[key].forEach(function (text, i) {
+      var id = 'alert-' + key + '-' + i;
+      var li = document.createElement('li');
+      li.innerHTML = '<label for="' + id + '" class="alert-item flex cursor-pointer items-start gap-3 rounded-xl border border-stone-200 bg-cream px-3.5 py-3 transition">' +
+        '<input type="checkbox" id="' + id + '" class="mt-1 h-4 w-4 shrink-0 accent-[#D96B43]">' +
+        '<span class="text-[14.5px] leading-snug text-stone-700">' + text + '</span></label>';
+      ul.appendChild(li);
+    });
+  });
+
+  var alertMsg = document.getElementById('alertMsg');
+  var alertBox = document.getElementById('alertBox');
+  var alertWa = document.getElementById('alertWa');
+
+  function updateAlert() {
+    var checked = [];
+    document.querySelectorAll('[data-alerts] input:checked').forEach(function (c) {
+      checked.push(c.parentElement.querySelector('span').textContent);
+    });
+    if (checked.length === 0) {
+      alertMsg.textContent = 'Henüz bir belirti seçmediniz.';
+      alertMsg.className = 'text-[15px] leading-relaxed text-stone-600';
+      alertBox.className = 'mt-7 rounded-2xl border border-stone-300 bg-white p-5';
+      alertWa.href = 'https://wa.me/905336216223?text=' + encodeURIComponent('ACİL: Hayvanım için acil yardıma ihtiyacım var.');
+    } else {
+      alertMsg.textContent = checked.length + ' belirti işaretlediniz. Beklemeyin, şimdi arayın ve kliniğe doğru yola çıkın.';
+      alertMsg.className = 'text-[15px] font-semibold leading-relaxed text-coral-600';
+      alertBox.className = 'mt-7 rounded-2xl border-2 border-coral bg-white p-5';
+      alertWa.href = 'https://wa.me/905336216223?text=' + encodeURIComponent('ACİL: Hayvanım için acil yardıma ihtiyacım var. Belirtiler: ' + checked.join('; ') + '.');
+    }
+  }
+  document.addEventListener('change', function (e) {
+    if (e.target && e.target.closest && e.target.closest('[data-alerts]')) { updateAlert(); }
+  });
+
+  var menuBtn = document.getElementById('menuBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', function () {
+    var open = mobileMenu.classList.toggle('hidden') === false;
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mobileMenu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      mobileMenu.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  function istanbulNow() {
+    var parts = new Intl.DateTimeFormat('en-GB', {
+      timeZone: 'Europe/Istanbul', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false
+    }).formatToParts(new Date());
+    var map = {};
+    parts.forEach(function (p) { map[p.type] = p.value; });
+    var dayMap = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+    return { day: dayMap[map.weekday], minutes: parseInt(map.hour, 10) * 60 + parseInt(map.minute, 10) };
+  }
+
+  function updateStatus() {
+    var now = istanbulNow();
+    var open, close;
+    if (now.day === 0) { open = 12 * 60; close = 20 * 60; } else { open = 10 * 60; close = 23 * 60; }
+    var isOpen = now.minutes >= open && now.minutes < close;
+    var text = document.getElementById('statusText');
+    var dot = document.getElementById('statusDot');
+    var ping = document.getElementById('statusPing');
+    if (isOpen) {
+      var left = close - now.minutes;
+      text.textContent = left <= 60 ? 'Şu an açık, kapanışa ' + left + ' dk var' : 'Şu an açık';
+      dot.className = 'relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-600';
+      ping.className = 'absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60';
+    } else {
+      text.textContent = 'Şu an kapalı';
+      dot.className = 'relative inline-flex h-2.5 w-2.5 rounded-full bg-stone-400';
+      ping.className = 'hidden';
+    }
+    document.querySelectorAll('#hoursList [data-days]').forEach(function (row) {
+      var days = row.getAttribute('data-days').split(',').map(Number);
+      row.style.opacity = days.indexOf(now.day) > -1 ? '1' : '0.65';
+    });
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+  renderGuide('kedi');
+  updateAlert();
+  updateStatus();
+  setInterval(updateStatus, 60000);
+  lucide.createIcons();
+})();
+</script>
+</body>
+</html>
